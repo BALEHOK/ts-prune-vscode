@@ -1,4 +1,6 @@
-export class ConsoleLogger {
+import { Logger } from './loggingTypes';
+
+export class ConsoleLogger implements Logger {
   log(message: string, ...optionalParams: any[]) {
     // eslint-disable-next-line no-console
     console.log(message, ...optionalParams);
@@ -9,5 +11,3 @@ export class ConsoleLogger {
     console.error(messageOrError, ...optionalParams);
   }
 }
-
-export default new ConsoleLogger();

@@ -1,7 +1,7 @@
 {
 	"name": "ts-prune-vscode",
 	"displayName": "ts-prune-vscode",
-	"description": "VS Code GUI for ts-prune",
+	"description": "VSCode GUI for ts-prune",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.59.0"
@@ -10,10 +10,27 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:ts-prune-vscode.helloWorld"
+		"onStartupFinished"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "exports-explorer",
+          "title": "Exports",
+          "icon": "resources/export.svg"
+        }
+      ]
+    },
+    "views": {
+      "exports-explorer": [
+        {
+          "id": "unused-exports",
+          "name": "Unused exports"
+        }
+      ]
+    },
 		"commands": [
 			{
 				"command": "ts-prune-vscode.helloWorld",
