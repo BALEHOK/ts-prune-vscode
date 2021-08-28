@@ -1,72 +1,87 @@
 {
-	"name": "ts-prune-vscode",
-	"displayName": "ts-prune-vscode",
-	"description": "VSCode GUI for ts-prune",
-	"version": "0.0.1",
-	"engines": {
-		"vscode": "^1.59.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"onStartupFinished"
-	],
-	"main": "./dist/extension.js",
-	"contributes": {
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "exports-explorer",
-          "title": "Exports",
-          "icon": "resources/export.svg"
-        }
-      ]
-    },
-    "views": {
-      "exports-explorer": [
-        {
-          "id": "unused-exports",
-          "name": "Unused exports"
-        }
-      ]
-    },
-		"commands": [
-			{
-				"command": "ts-prune-vscode.helloWorld",
-				"title": "Hello World"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "yarn run package",
-		"compile": "webpack",
-		"watch": "webpack --watch",
-		"package": "webpack --mode production --devtool hidden-source-map",
-		"test-compile": "tsc -p ./",
-		"test-watch": "tsc -watch -p ./",
-		"pretest": "yarn run test-compile && yarn run lint",
-		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
-	},
-	"devDependencies": {
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.2.2",
-		"@types/node": "14.x",
-		"@types/vscode": "^1.59.0",
-		"@typescript-eslint/eslint-plugin": "^4.26.0",
-		"@typescript-eslint/parser": "^4.26.0",
-		"eslint": "^7.27.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-prettier": "^3.4.1",
-		"eslint-plugin-react": "^7.24.0",
-		"glob": "^7.1.7",
-		"mocha": "^8.4.0",
-		"prettier": "^2.3.2",
-		"ts-loader": "^9.2.2",
-		"typescript": "^4.3.2",
-		"vscode-test": "^1.5.2",
-		"webpack": "^5.38.1",
-		"webpack-cli": "^4.7.0"
-	}
+		"name": "ts-prune-vscode",
+		"displayName": "ts-prune-vscode",
+		"description": "VSCode GUI for ts-prune",
+		"version": "0.0.1",
+		"engines": {
+				"vscode": "^1.59.0"
+		},
+		"categories": [
+				"Other"
+		],
+		"activationEvents": [
+				"onStartupFinished"
+		],
+		"main": "./dist/extension.js",
+		"contributes": {
+				"viewsContainers": {
+						"activitybar": [
+								{
+										"id": "exportsExplorer",
+										"title": "Exports",
+										"icon": "resources/export.svg"
+								}
+						]
+				},
+				"views": {
+						"exportsExplorer": [
+								{
+										"id": "unusedExports",
+										"name": "Unused exports"
+								}
+						]
+				},
+				"commands": [
+						{
+								"command": "tsPruneVscode.refresh",
+								"title": "Refresh list of unused exports",
+								"icon": {
+										"light": "resources/light/refresh.svg",
+										"dark": "resources/dark/refresh.svg"
+								}
+						}
+				],
+				"menus": {
+						"view/title": [
+								{
+										"command": "tsPruneVscode.refresh",
+										"when": "view == unusedExports",
+										"group": "navigation"
+								}
+						]
+				}
+		},
+		"scripts": {
+				"vscode:prepublish": "yarn run package",
+				"compile": "webpack",
+				"watch": "webpack --watch",
+				"package": "webpack --mode production --devtool hidden-source-map",
+				"test-compile": "tsc -p ./",
+				"test-watch": "tsc -watch -p ./",
+				"pretest": "yarn run test-compile && yarn run lint",
+				"lint": "eslint src --ext ts",
+				"test": "node ./out/test/runTest.js"
+		},
+		"devDependencies": {
+				"@types/glob": "^7.1.3",
+				"@types/mocha": "^8.2.2",
+				"@types/node": "14.x",
+				"@types/vscode": "^1.59.0",
+				"@typescript-eslint/eslint-plugin": "^4.26.0",
+				"@typescript-eslint/parser": "^4.26.0",
+				"eslint": "^7.27.0",
+				"eslint-config-prettier": "^8.3.0",
+				"eslint-plugin-prettier": "^3.4.1",
+				"glob": "^7.1.7",
+				"mocha": "^8.4.0",
+				"prettier": "^2.3.2",
+				"ts-loader": "^9.2.2",
+				"typescript": "^4.3.2",
+				"vscode-test": "^1.5.2",
+				"webpack": "^5.38.1",
+				"webpack-cli": "^4.7.0"
+		},
+		"dependencies": {
+				"ts-prune": "^0.10.0"
+		}
 }

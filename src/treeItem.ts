@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-export class TreeItem extends vscode.TreeItem {
+export class UnusedExportItem extends vscode.TreeItem {
   constructor(
     public readonly label: string,
     public readonly collapsibleState: vscode.TreeItemCollapsibleState,
