@@ -2,7 +2,8 @@
 		"name": "ts-prune-vscode",
 		"displayName": "ts-prune-vscode",
 		"description": "VSCode GUI for ts-prune",
-		"version": "0.0.1",
+		"version": "1.0.0",
+    "author": "Aleksandr Shukletsov",
 		"engines": {
 				"vscode": "^1.59.0"
 		},

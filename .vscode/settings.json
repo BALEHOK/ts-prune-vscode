@@ -12,4 +12,5 @@
     "typescript.tsc.autoDetect": "off",
     "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     "eslint.format.enable": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
 }
