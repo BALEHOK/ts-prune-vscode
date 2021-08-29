@@ -8,6 +8,10 @@ export class VsCodeOutputLogger implements Logger {
     this.vscodeOutput = vscode.window.createOutputChannel('TS Prune');
   }
 
+  debug() {
+    // no debug in user console
+  }
+
   log(message: string) {
     this.vscodeOutput.appendLine(message);
   }

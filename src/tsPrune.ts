@@ -8,17 +8,24 @@ export interface Config extends IConfigInterface {
 }
 
 export class TsPrune {
-  results = [];
-  run(config: Config) {
-    this.results = [];
-
+  runSync(config: Config) {
     const tsPruneConfig = {
       project: path.join(config.rootPath, config.project),
     } as IConfigInterface;
 
-    const output = (line) => this.results.push(line);
-    runTsPrune(tsPruneConfig, output);
+    const results: string[] = [];
+    runTsPrune(tsPruneConfig, (line) => results.push(line));
 
-    logger.log('results ' + this.results.length);
+    logger.log(`Found ${results.length} unused exprots`);
+
+    return results;
+  }
+
+  run(config: Config) {
+    return new Promise<string[]>((resolve) => {
+      setTimeout(() => {
+        resolve(this.runSync(config));
+      }, 0);
+    });
   }
 }
