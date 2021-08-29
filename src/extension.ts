@@ -5,8 +5,7 @@ import logger from './logging/logger';
 import { TsPrune } from './tsPrune';
 import { UnusedExportsTreeProvider } from './unusedExportsTreeProvider';
 
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+// ts-prune-ignore-next
 export function activate(context: vscode.ExtensionContext) {
   const unusedExportsTreeProvider = new UnusedExportsTreeProvider(
     new TsPrune()
@@ -27,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
   logger.log('Extension "ts-prune-vscode" is now active!');
 }
 
-// this method is called when your extension is deactivated
+// ts-prune-ignore-next
 export function deactivate() {
   // empty by intention
 }
