@@ -1,7 +1,7 @@
 {
 		"name": "ts-prune-vscode",
-		"displayName": "ts-prune-vscode",
-		"description": "VSCode GUI for ts-prune",
+		"displayName": "Unused exports in TypsScript",
+		"description": "Find unused exports in your TS project with ts-prune",
 		"version": "1.0.0",
     "author": "Aleksandr Shukletsov",
 		"engines": {
@@ -18,14 +18,14 @@
 				"viewsContainers": {
 						"activitybar": [
 								{
-										"id": "exportsExplorer",
+										"id": "tsPruneVscode",
 										"title": "Exports",
 										"icon": "resources/export.svg"
 								}
 						]
 				},
 				"views": {
-						"exportsExplorer": [
+						"tsPruneVscode": [
 								{
 										"id": "unusedExports",
 										"name": "Unused exports"

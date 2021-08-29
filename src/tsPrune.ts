@@ -16,16 +16,17 @@ export class TsPrune {
     const results: string[] = [];
     runTsPrune(tsPruneConfig, (line) => results.push(line));
 
-    logger.log(`Found ${results.length} unused exprots`);
+    logger.log(`Found ${results.length} unused export(s)`);
 
     return results;
   }
 
   run(config: Config) {
     return new Promise<string[]>((resolve) => {
+      // timeout has to be > 0, otherwise VSCode executes it kinda "synchronous"
       setTimeout(() => {
         resolve(this.runSync(config));
-      }, 0);
+      }, 50);
     });
   }
 }
