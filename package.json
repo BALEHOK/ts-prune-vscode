@@ -4,6 +4,9 @@
 		"description": "Find unused exports in your TS project with ts-prune",
 		"version": "1.0.0",
     "author": "Aleksandr Shukletsov",
+    "publisher": "balehok",
+    "license": "MIT",
+    "repository": "https://github.com/balehok/ts-prune-vscode",
 		"engines": {
 				"vscode": "^1.59.0"
 		},
